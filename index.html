@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Shadowbound: The Lost Kingdom</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="game" width="1280" height="720"></canvas>
+
+<div id="menu" class="overlay">
+  <div class="brand"><h1>SHADOWBOUND</h1><h2>THE LOST KINGDOM</h2></div>
+  <div class="menu-buttons">
+    <button data-action="new">NEW GAME</button>
+    <button data-action="continue">CONTINUE</button>
+    <button data-action="controls">CONTROLS</button>
+  </div>
+  <small>Original dark-fantasy action adventure</small>
+</div>
+
+<div id="hud" class="hidden">
+  <div class="hud-left">
+    <div class="stat"><span>HP</span><div class="bar hp"><i id="hpFill"></i></div></div>
+    <div class="stat"><span>MP</span><div class="bar mp"><i id="mpFill"></i></div></div>
+    <div class="level">LV <b id="level">1</b> · XP <b id="xp">0/100</b></div>
+  </div>
+  <div class="hud-right">◈ <b id="coins">0</b></div>
+  <div id="areaName">WHISPERING FOREST</div>
+  <div id="questBox">Quest: Explore the ancient ruins.</div>
+  <div id="bossHud" class="hidden"><strong id="bossName">BOSS</strong><div class="bossbar"><i id="bossFill"></i></div></div>
+</div>
+
+<div id="dialog" class="hidden"></div>
+<div id="inventory" class="panel hidden">
+  <h2>INVENTORY</h2>
+  <div id="inventoryContent"></div>
+  <button data-action="closeInventory">CLOSE</button>
+</div>
+<div id="pause" class="panel hidden">
+  <h2>PAUSED</h2>
+  <button data-action="resume">RESUME</button>
+  <button data-action="save">SAVE GAME</button>
+  <button data-action="menu">MAIN MENU</button>
+</div>
+<div id="death" class="overlay hidden"><h1>YOU DIED</h1><p>The last magical shrine remembers you.</p><button data-action="respawn">RESPAWN</button></div>
+<div id="victory" class="overlay hidden"><h1>THE SHADOW FALLS</h1><p>The Lost Kingdom is free.</p><button data-action="new">PLAY AGAIN</button></div>
+
+<div id="mobile" class="hidden">
+  <div><button data-key="ArrowLeft">◀</button><button data-key="ArrowRight">▶</button></div>
+  <div><button data-key="Space">JUMP</button><button data-key="KeyJ">⚔</button><button data-key="KeyK">✦</button><button data-key="KeyE">E</button></div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

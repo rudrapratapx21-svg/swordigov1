@@ -1,0 +1,1 @@
+export class Camera{constructor(w,h){this.x=0;this.y=0;this.w=w;this.h=h}update(px,py,dt,maxX,shake){const target=Math.max(0,Math.min(maxX-this.w,px-this.w*.38));this.x+=(target-this.x)*Math.min(1,dt*5);if(shake>0){this.x+=(Math.random()-.5)*8;this.y+=(Math.random()-.5)*5}else this.y+=(0-this.y)*Math.min(1,dt*5)}}
