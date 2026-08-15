@@ -1,8 +1,0 @@
-export class UI{
- constructor(g){this.g=g;this.$=g.ui}
- refresh(){const p=this.g.player;if(!p)return;this.$.hpFill.style.width=(p.hp/p.maxHp*100)+"%";this.$.mpFill.style.width=(p.mp/p.maxMp*100)+"%";this.$.level.textContent=p.level;this.$.xp.textContent=p.xp+"/"+p.level*100;this.$.coins.textContent=p.coins;const names=["WHISPERING FOREST","OLD STONE VALLEY","FORGOTTEN MINES","RUINED TEMPLE","SHADOW MARSH","ANCIENT CASTLE","FINAL FORTRESS"];this.$.areaName.textContent=names[Math.min(6,Math.floor(p.x/1280))];this.$.questBox.textContent=p.x>8000?"Quest: Defeat the Hollow King.":"Quest: Explore the Lost Kingdom and find the ancient shrines.";if(this.g.boss)this.$.bossFill.style.width=Math.max(0,this.g.boss.hp/this.g.boss.max*100)+"%"}
- boss(show){this.$.bossHud.classList.toggle("hidden",!show)}
- dialog(show){this.$.dialog.classList.toggle("hidden",!show)}
- drawDialog(d){this.$.dialog.innerHTML="<b>"+d.name+"</b><br>"+d.text+'<span class="dialog-hint">ENTER / E</span>'}
- inventory(show){const p=this.g.player;this.$.inventory.classList.toggle("hidden",!show);if(show){this.$.inventoryContent.innerHTML='<div class="inventory-grid"><div class="item"><b>Weapon</b><br>'+p.weapon+'<br>Attack '+p.attackDamage+'</div><div class="item"><b>Spell</b><br>'+p.spell+'<br>Magic '+p.magicDamage+'</div><div class="item"><b>Level</b><br>'+p.level+'</div><div class="item"><b>Coins</b><br>'+p.coins+'</div></div>'}}
-}
